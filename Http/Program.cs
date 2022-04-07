@@ -28,6 +28,8 @@ namespace Http
             //neyise oxumaq istiyende getasync metodunu cagiriiq ve hara atacagimizi qeyd edirik
             var response =httpClient.GetAsync("https://jsonplaceholder.typicode.com/users").Result;
             //content bize geren datadi biz ise onu string tipinden oxuyurq
+            //var sadece keyvorddu 
+            //object-heryes objectden miras alir
             var responseJsonStr =response.Content.ReadAsStringAsync().Result;
 
             //Console.WriteLine(responseJsonStr);
@@ -37,9 +39,10 @@ namespace Http
             foreach (var u in users)
             {
                 Console.WriteLine(u.Name);
+                Console.WriteLine(u.Addres);
             }
 
-
+           
         }
     }
 }
