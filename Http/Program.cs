@@ -11,6 +11,8 @@ namespace Http
     internal class Program
     {
         static void Main(string[] args)
+            //user list oldugu ucun list yaradiriq
+            //addresde obyektdi class kimi yaradib proplarini veririk
         {
             Directory.CreateDirectory(@"C:\Users\tu7knjupn\Desktop\Http\Http\Files");
             if (!File.Exists(@"C:\Users\tu7knjupn\Desktop\Http\Http\Files\database.json"))
