@@ -20,16 +20,23 @@ namespace Http
                 File.Create(@"C:\Users\tu7knjupn\Desktop\Http\Http\Files\database.json");
             }
 
+
+            //hhtpclient -sorgu gonderir
+            
+            
             HttpClient httpClient=new HttpClient();
-            var response=httpClient.GetAsync("https://jsonplaceholder.typicode.com/users").Result;
-            var responseJsonStr=response.Content.ReadAsStringAsync().Result;
+            //neyise oxumaq istiyende getasync metodunu cagiriiq ve hara atacagimizi qeyd edirik
+            var response =httpClient.GetAsync("https://jsonplaceholder.typicode.com/users").Result;
+            //content bize geren datadi biz ise onu string tipinden oxuyurq
+            var responseJsonStr =response.Content.ReadAsStringAsync().Result;
 
             //Console.WriteLine(responseJsonStr);
+            //list olaraq veririk cunki arraydi linkdeki melumat
             List<User> users = JsonConvert.DeserializeObject<List<User>>(responseJsonStr);
 
             foreach (var u in users)
             {
-                Console.WriteLine(u.Phone);
+                Console.WriteLine(u.Name);
             }
 
 
